@@ -1903,9 +1903,11 @@ static inline dns_rcode_t decode_rr_opt(
   assert(data != NULL);
   assert(opt  != NULL);
   
+#if 0
   if (data->edns) /* there can be only one */
     return RCODE_FORMAT_ERROR;
-    
+#endif
+  
   data->edns             = true;
   opt->numopts           = 0;
   opt->opts              = NULL;
